@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buoi 1 Bai 1 (Semantic HTML5)</title>
+    <style>
+    /* CSS tối giản chỉ để dễ quan sát cấu trúc, chưa dùng kỹ thuật CSS3 nào (sẽ học từ Buổi 6) */
+    body {font-family: Arial,sans-serif; margin: 0; color: #3333;}
+    header, footer {background: #2c3e50;color:#fff;padding: 16px 24px;}
+    header nav ul {list-style: none;display: flex; gap:20px;padding: 0;margin: 8px 0 0;
+     }
+     header nav a {color: #fff; text-decoration: none;}
+     main{padding: 24px; max-width: 800px; margin: 0 auto;}
+     section {margin-bottom: 32px;}
+     article.item {border: 1px solid #ddd;padding: 12px; margin-bottom: 10px; border-radius: 4px;}
+     aside{background: #f5f6fa; padding: 16px; border-left: 4px solid #2c3e50; }
+     .thong-bao{background: #ffe9e9;padding: 8px 12px;margin-top: 10px;}
+     .ghi-chu {border: 1px dashed #999;padding: 8px 12px;margin-top: 10px;}
+
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER + NAV ===== -->
+     <header>
+        <h1>Cafe XXC</h1>
+        <nav>
+            <ul>
+                <li><a href="#gioi-thieu"></a>Gioi thieu</li>
+                <li><a href="#thuc-don">Thuc don</a></li>
+                <li><a href="lien-he"></a>Lien he</li>
+            </ul>
+        </nav>
+     </header>
+     <!-- ===== MAIN CONTENT ===== -->
+      <main>
+        <section id="gioi-thieu">
+            <h2>Ve chung toi</h2>
+            <p>Cafe ABC hoat dong tu nam 20152015, chuyên phục vụ cà phê rang xay nguyên chất
+và không gian yên tĩnh để làm việc, học tập. </p>
+        </section>
+        <section id="thuc-don"> 
+            <h2>Thuc don</h2>
+            <!-- Mỗi món là 1 <article> vì có thể tách ra dùng độc lập.
+data-price / data-category dùng để sau này JavaScript đọc và xử lý
+(ví dụ: tính tổng tiền, lọc theo danh mục) -->
+<article class="item " data-price ="25000" data-category="ca-phe">
+    <h3>Ca phe den</h3>
+    <p>25000</p>
+</article>
+<article class="item" data-price="30000" data-category="sua">
+    <h3>Bac xiu </h3> 
+</article>
+<article class="item"  data-price="35000" data-category="tra">
+    <h3>Tra dao cam sa</h3>
+    <p>35000</p>
+</article>
+</section> 
+   </main>
+<!-- Ví dụ dùng "hidden": phần tử này sẽ KHÔNG hiển thị trên trang,
+chỉ hiện khi xóa thuộc tính hidden (ví dụ bằng JavaScript khi hết hàng) -->
+    
+<section>
+<h2>Ghi chú nội bộ</h2>
+<p class="ghi-chu" contenteditable="true">
+Nhấp vào đây để sửa ghi chú... (ví dụ: "Nhập thêm sữa tươi vào thứ 2")
+</p>
+</section>
+</main>
+<!-- ===== ASIDE: nội dung phụ, liên quan nhưng không phải chính ===== -->
+<aside>
+<h3>Ưu đãi hôm nay</h3>
+<p>Giảm 10% cho đơn từ 100.000đ. Áp dụng đến hết ngày.</p>
+</aside>
+<!-- ===== FOOTER ===== -->
+ <footer id="lien-he">
+    <p>&copy; 2026 Cafe XXC - 123 </p>
+ </footer>
+  
+</body>
+</html>
